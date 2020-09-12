@@ -17,19 +17,19 @@ onde todas as instancias de stra foram substituidas por strb.
 """
 def fix_start(s):
     first_letter, rest = s[:1], s[1:]
-    return f'{first_letter}{rest.replace(first_letter, "*")}' if len(s) > 1 else s
+    return f'{first_letter}{rest.replace(first_letter, "*")}'
+"""
+
+# Solucao 2
+"""
+def fix_start(s):
+    return s[0] + s[1:].replace(s[0], "*")
 """
 
 
-# Solucao 2
-def fix_start(string):
-    first_letter, rest = string[:1], string[1:]
-
-    if len(string) > 1:
-        rest_replaced = rest.replace(first_letter, "*")
-        string = f'{first_letter}{rest_replaced}'
-
-    return string
+# Solucao 3
+def fix_start(s):
+    return s[0] + s[1:].replace(s[0], "*") if len(s) > 1 else s
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
