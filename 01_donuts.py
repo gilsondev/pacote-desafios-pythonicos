@@ -8,10 +8,22 @@ ao invés do contador.
 Exemplo: donuts(5) retorna 'Number of donuts: 5'
 e donuts(23) retorna 'Number of donuts: many'
 """
-
+# Solucao 1
+"""
 def donuts(count):
-    # +++ SUA SOLUÇÃO +++
-    return
+    phrase = 'Number of donuts'
+    message = f'{phrase}: {count}'
+
+    if count >= 10:
+        message = f'{phrase}: many'
+    return message
+"""
+
+
+# Solucao 2
+def donuts(count):
+    total = 'many' if count >= 10 else count
+    return f'Number of donuts: {total}'
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
