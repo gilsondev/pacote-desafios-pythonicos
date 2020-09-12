@@ -12,10 +12,16 @@ Exemplo:
 Assuma que a e b tem tamanho 2 ou maior.
 """
 
-def mix_up(a, b):
-    # +++ SUA SOLUÇÃO +++
-    return
+# Solucao 1
+# def mix_up(a, b):
+#     valid_words = len(a) >= 2 and len(b) >= 2
+#     return f'{b[:2] + a[2:]} {a[:2] + b[2:]}' if valid_words else f'{a} {b}'
 
+
+# Solucao 2
+def mix_up(a, b):
+    total_letters = (len(a), len(b))
+    return f'{b[:2] + a[2:]} {a[:2] + b[2:]}' if sum(total_letters) >= 4 else f'{a} {b}'
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
@@ -42,3 +48,6 @@ if __name__ == '__main__':
     test(mix_up, ('dog', 'dinner'), 'dig donner')
     test(mix_up, ('gnash', 'sport'), 'spash gnort')
     test(mix_up, ('pezzy', 'firm'), 'fizzy perm')
+    test(mix_up, ('p', 'f'), 'p f')
+    test(mix_up, ('fo', 'b'), 'fo b')
+    test(mix_up, ('a', 'bo'), 'a bo')
