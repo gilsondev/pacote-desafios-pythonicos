@@ -13,9 +13,23 @@ Dica: s.replace(stra, strb) retorna uma versão da string s
 onde todas as instancias de stra foram substituidas por strb.
 """
 
+# Solucao 1
+"""
 def fix_start(s):
-    # +++ SUA SOLUÇÃO +++
-    return
+    first_letter, rest = s[:1], s[1:]
+    return f'{first_letter}{rest.replace(first_letter, "*")}' if len(s) > 1 else s
+"""
+
+
+# Solucao 2
+def fix_start(string):
+    first_letter, rest = string[:1], string[1:]
+
+    if len(string) > 1:
+        rest_replaced = rest.replace(first_letter, "*")
+        string = f'{first_letter}{rest_replaced}'
+
+    return string
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
