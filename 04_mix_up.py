@@ -19,9 +19,17 @@ Assuma que a e b tem tamanho 2 ou maior.
 
 
 # Solucao 2
+# def mix_up(a, b):
+#     total_letters = (len(a), len(b))
+#     return f'{b[:2] + a[2:]} {a[:2] + b[2:]}' if sum(total_letters) >= 4 else f'{a} {b}'
+
+
+# Solucao 3
 def mix_up(a, b):
     total_letters = (len(a), len(b))
-    return f'{b[:2] + a[2:]} {a[:2] + b[2:]}' if sum(total_letters) >= 4 else f'{a} {b}'
+    word_a = "".join([b[:2], a[2:]])
+    word_b = "".join([a[:2], b[2:]])
+    return f'{word_a} {word_b}' if sum(total_letters) >= 4 else f'{a} {b}'
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
